@@ -38,9 +38,7 @@ class myweb:
         for i in self.all_product:
             if int(i.category_id) == int(id):
                 product_show.append(i)
-        self.context = {
-            'all_product': product_show
-        }
+        self.context['all_product'] = product_show
         return render(request=r, template_name='products.html', context=self.context)
 
     def product_details(self, r, id):
@@ -48,9 +46,8 @@ class myweb:
         for i in self.all_product:
             if int(i.id) == int(id):
                 product_detail = i
-        self.context = {
-            'product_detail': product_detail
-        }
+        self.context['product_detail'] = product_detail
+
         print(product_detail)
         return render(request=r, template_name='productDetails.html', context=self.context)
 
@@ -59,6 +56,7 @@ class myweb:
         self.all_product = product.objects.all()
         self.all_category_name = [cate.category_name for cate in self.all_category]
         self.all_product_name = [prod.product_name for prod in self.all_product]
+
 
 list_category_must_insert = [
     {'id': 1, 'category_name': 'Trang trí bên trong', 'id_mom': -1},
