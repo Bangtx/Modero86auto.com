@@ -1,1 +1,1 @@
-web: gunicorn webanhloc.wsgi
+web: gunicorn mywebsite.wsgi
