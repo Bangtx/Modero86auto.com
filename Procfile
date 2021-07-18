@@ -1,1 +1,1 @@
-web: gunicorn webanhloc.wsgi
+web: gunicorn webanhloc.wsgi --log-file -
